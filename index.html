@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+        <header class="glass-panel">
+            <h1>Hello, How are you?</h1>
+            <p class="date-display" id="currentDate">Loading date...</p>
+        </header>
+
+        <main>
+            <section class="mood-selection glass-panel">
+                <h2>Log Your Mood</h2>
+                <div class="mood-grid">
+                    <button class="mood-btn" data-mood="amazing" data-emoji="🤩" data-color="#FFD700">
+                        <span class="emoji">🤩</span>
+                        <span class="label">Amazing</span>
+                    </button>
+                    <button class="mood-btn" data-mood="happy" data-emoji="😊" data-color="#FFA500">
+                        <span class="emoji">😊</span>
+                        <span class="label">Happy</span>
+                    </button>
+                    <button class="mood-btn" data-mood="neutral" data-emoji="😐" data-color="#A9A9A9">
+                        <span class="emoji">😐</span>
+                        <span class="label">Neutral</span>
+                    </button>
+                    <button class="mood-btn" data-mood="sad" data-emoji="😔" data-color="#4682B4">
+                        <span class="emoji">😔</span>
+                        <span class="label">Sad</span>
+                    </button>
+                    <button class="mood-btn" data-mood="stress" data-emoji="😫" data-color="#DC143C">
+                        <span class="emoji">😫</span>
+                        <span class="label">Stressed</span>
+                    </button>
+                </div>
+                <div class="note-input-container">
+                    <textarea id="moodNote" placeholder="Add a note about your day... (optional)"></textarea>
+                </div>
+                <button id="saveMoodBtn" class="primary-btn">Save Mood</button>
+            </section>
+
+            <section class="stats-overview glass-panel">
+                <div class="stat-card">
+                    <h3>Current Streak</h3>
+                    <p id="streakCount">0 Days</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Logs</h3>
+                    <p id="totalLogs">0</p>
+                </div>
+            </section>
+
+            <section class="history-section glass-panel">
+                <div class="history-header">
+                    <h2>Recent History</h2>
+                    <button id="clearHistoryBtn" class="text-btn">Clear All</button>
+                </div>
+                <div id="historyList" class="history-list">
+                    <!-- History items will be injected here -->
+                    <div class="empty-state">No mood logs yet. Start tracking!</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
